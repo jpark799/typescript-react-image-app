@@ -1,7 +1,18 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 
 export default function App() {
+  const [images, setImages] = useState()
+  useEffect(() => {
+    fetch("https://picsum.photos/v2/list")
+    .then(response => response.json())
+    .then(data => {
+      data.sort((a : any , b : any ) => a.author.localeCompare(b.author))
+      setImages(data)
+    });
+  }, [])
+  
+
   return (
     <div className="App">
       <h1>Hello!</h1>
