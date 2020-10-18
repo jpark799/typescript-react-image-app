@@ -2,7 +2,24 @@ import React, { useState, useEffect } from "react";
 import "./styles.css";
 
 export default function App() {
-  const [images, setImages] = useState()
+
+  interface IImage {
+    id: string,
+    author: string,
+    width: number,
+    height: number,
+    url: string,
+    download_url: string
+  }
+  const initialState : IImage[] = [{
+    id: "",
+    author: "",
+    width: 0,
+    height: 0,
+    url: "",
+    download_url: ""
+  }]
+  const [images, setImages] = useState(initialState)
   useEffect(() => {
     fetch("https://picsum.photos/v2/list")
     .then(response => response.json())
@@ -15,14 +32,6 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Hello!</h1>
-      <p>
-        Fork from this page (top right button) and do the following using the
-        API:{" "}
-        <a href="https://picsum.photos/v2/list" target="_blank">
-          https://picsum.photos/v2/list
-        </a>
-      </p>
 
       <ol>
         <li>Get the list of photos</li>
