@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
+import {Header} from "./components"
 
 export default function App() {
 	interface IImage {
@@ -40,6 +41,7 @@ export default function App() {
 
 	return (
     <div className="App">
+			<Header/>
       {!loadComplete ? (
         <div className="loader" />
       ) : (

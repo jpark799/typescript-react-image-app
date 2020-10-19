@@ -18,3 +18,10 @@
 	background: url("//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif") 50% 50%
 		no-repeat rgb(249, 249, 249);
 }
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  text-align: center;
+}
