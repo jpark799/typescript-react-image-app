@@ -37,6 +37,12 @@ export default function App() {
 			});
 	}, []);
 
+	const expandImage = (image: IImage) => {
+		image.height = 200;
+		image.width = 300;
+		setImages([...images]);
+	};
+
 	return (
 		<div className="App">
 			<Header />
@@ -53,9 +59,7 @@ export default function App() {
 								src={image.download_url}
 								alt={image.author}
 								onClick={() => {
-									image.height = 200;
-									image.width = 300;
-									setImages([...images]);
+									expandImage(image);
 								}}
 							/>
 							Author: {image.author ? image.author : "N/A"}
