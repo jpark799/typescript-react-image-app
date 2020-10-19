@@ -1,9 +1,13 @@
 
 .image {
-	padding: 20px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.image-row {
+  text-align: center;
+  padding: 20px;
 }
 
 .loader {
