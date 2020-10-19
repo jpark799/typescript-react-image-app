@@ -32,6 +32,12 @@ export default function App() {
 			});
 	}, []);
 
+	const	resize = (number: number) => {
+    const img = document.getElementsByTagName('img')[number]; 
+    img.style.height = '200px'; 
+    img.style.width = '300px';
+}
+
 	return (
     <div className="App">
       {!loadComplete ? (
@@ -40,7 +46,7 @@ export default function App() {
         <div>
           {images.map((image) => (
             <div className="image-row" key={image.id}>
-              <img className="image" src={image.download_url} alt={image.author} />
+              <img className="image" src={image.download_url} alt={image.author} onClick={() => {resize(images.indexOf(image))}} />
             </div>
           ))}
         </div>
