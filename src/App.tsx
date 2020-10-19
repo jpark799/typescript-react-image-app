@@ -28,6 +28,7 @@ export default function App() {
 			.then((response) => response.json())
 			.then((data: IImage[]) => {
 				data.sort((a: IImage, b: IImage) => a.author.localeCompare(b.author));
+				data.map((data) => {data.height= 133; data.width=200})
 				setImages(data);
 				setLoadComplete(true);
 			});
@@ -48,7 +49,7 @@ export default function App() {
         <div>
           {images.map((image) => (
             <div className="image-row" key={image.id}>
-              <img className="image" src={image.download_url} alt={image.author} onClick={() => {resize(images.indexOf(image))}} />
+              <img className="image" width={image.width} height={image.height} src={image.download_url} alt={image.author} onClick={() => {image.height=200; image.width=300; setImages([...images])}} />
             </div>
           ))}
         </div>
