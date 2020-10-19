@@ -21,22 +21,30 @@ export default function App() {
 		},
 	];
 	const [images, setImages] = useState(initialState);
+	const [loadComplete, setLoadComplete] = useState(false);
 	useEffect(() => {
 		fetch("https://picsum.photos/v2/list")
 			.then((response) => response.json())
-			.then((data) => {
-				data.sort((a: any, b: any) => a.author.localeCompare(b.author));
+			.then((data: IImage[]) => {
+				data.sort((a: IImage, b: IImage) => a.author.localeCompare(b.author));
 				setImages(data);
+				setLoadComplete(true);
 			});
 	}, []);
 
 	return (
-		<div className="App">
-			<div>
-				{images.map((image) => (
-					<img src={image.download_url}/>
-				))}
-			</div>
-		</div>
-	);
+    <div className="App">
+      {!loadComplete ? (
+        <div className="loader" />
+      ) : (
+        <div>
+          {images.map((image) => (
+            <div className="image-row" key={image.id}>
+              <img className="image" src={image.download_url} alt={image.author} />
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
