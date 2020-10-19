@@ -28,7 +28,7 @@ export default function App() {
 			.then((response) => response.json())
 			.then((data: IImage[]) => {
 				data.sort((a: IImage, b: IImage) => a.author.localeCompare(b.author));
-				data.map((data) => {
+				data.forEach((data) => {
 					data.height = 133;
 					data.width = 200;
 				});
@@ -58,6 +58,7 @@ export default function App() {
 									setImages([...images]);
 								}}
 							/>
+							Author: {image.author}
 						</div>
 					))}
 				</div>
