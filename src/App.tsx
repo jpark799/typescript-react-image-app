@@ -58,7 +58,7 @@ export default function App() {
 									setImages([...images]);
 								}}
 							/>
-							Author: {image.author}
+							Author: {image.author ? image.author : "N/A"}
 						</div>
 					))}
 				</div>
