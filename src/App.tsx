@@ -50,7 +50,7 @@ export default function App() {
 				<div className="loader" />
 			) : (
 				<div>
-					{images.map((image) => (
+					{images.map((image: IImage) => (
 						<div className="image-row" key={image.id}>
 							<img
 								className="image"
