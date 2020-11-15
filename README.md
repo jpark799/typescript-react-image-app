@@ -13,4 +13,4 @@ API: https://picsum.photos/v2/list
 
 ## Link
 
-[Code Sandbox Link](https://codesandbox.io/s/frontend-exercise-forked-f7qry?file=/src/App.tsx)
+You can find the [Code Sandbox here](https://codesandbox.io/s/frontend-exercise-forked-f7qry?file=/src/App.tsx)
