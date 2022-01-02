@@ -1,5 +1,5 @@
 ## Description
-A simple typescript exercise. Hit an endpoint and displayed the images. When you click an image, the image will expand. 
+A simple typescript exercise. Hit an endpoint and display the images. When you click an image, the image will expand. 
 
 
 ## Requirements
